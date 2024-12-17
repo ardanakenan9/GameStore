@@ -1,0 +1,435 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #F5F7FA, #B8C6DB); /* Gradien abu muda ke biru pucat */
+    color: #333333; /* Warna teks utama */
+    box-sizing: border-box;
+    height: 100%;
+}
+
+/* Header Section */
+.header {
+    width: 100%;
+    height: 250px; /* Tinggi header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    background: url('assets/valorant.png') center/cover no-repeat; /* Gambar header */
+
+}
+
+h1 {
+    font-size: 28px;
+    color: #333333;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #6A11CB, #2575FC); /* Gradien ungu ke biru */
+}
+
+.header p {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffffff, #f7f7f7); /* Putih ke abu-abu terang */
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+}
+
+/* Container untuk judul game */
+
+.game-title-box {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #FF7E5F, #FEB47B); /* Gradien oranye ke peach */
+    border-radius: 15px; /* Sudut melengkung */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Bayangan lembut */
+    text-align: center;
+    animation: glow 1.5s infinite; /* Animasi efek glow */
+    justify-content: center; /* Rata tengah secara horizontal */
+    align-items: center; /* Rata tengah secara vertikal */
+}
+
+/* Kotak Judul Game */
+.game-title-box {
+    display: inline-block;
+    margin: 20px auto; /* Tengah secara horizontal */
+    padding: 10px 20px;
+    font-size: 28px; /* Ukuran teks */
+    font-weight: bold;
+    color: #ffffff; /* Teks putih */
+    background: linear-gradient(135deg, #09167f, #FEB47B); /* Gradien oranye ke peach */
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan */
+    text-align: center;
+    text-transform: uppercase; /* Huruf kapital */
+    letter-spacing: 2px; /* Jarak antar huruf */
+    animation: fadeIn 1s ease-in-out; /* Animasi masuk */
+}
+
+/* Animasi Masuk */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .game-title-box {
+        font-size: 24px; /* Ukuran lebih kecil untuk tablet */
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-title-box {
+        font-size: 20px; /* Ukuran lebih kecil untuk ponsel */
+        padding: 6px 10px;
+    }
+}
+
+
+
+/* Efek fade-in untuk elemen */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1, p, .home-button {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Steps Styling */
+.step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content label {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Responsive Inputs */
+.step-content input[type="text"],
+.step-content input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.step-content input[type="text"]:focus,
+.step-content input[type="file"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 2px 8px rgba(0, 0, 255, 0.2);
+}
+
+/* Paket Top-Up */
+.packages {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.package-card {
+    width: calc(80% - 20px);
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    background: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Paket Top-Up dan Metode Pembayaran dalam 3 Kolom */
+.packages, .payment-methods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+    gap: 15px; /* Jarak antar elemen */
+    margin-top: 10px;
+}
+
+/* Paket Top-Up Cards */
+.package-card, .payment-method {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.package-card:hover, .payment-method:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling untuk Paket Top-Up */
+.package-card input[type="radio"],
+.payment-method input[type="radio"] {
+    display: none;
+}
+
+.package-card h4, .payment-method h4 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.package-card p, .payment-method p {
+    font-size: 14px;
+    color: #555;
+}
+
+.package-card input[type="radio"]:checked + label,
+.payment-method input[type="radio"]:checked + label {
+    border: 2px solid #28a745;
+    background-color: #e6f7e9;
+}
+
+/* Metode Pembayaran Images */
+.payment-method img {
+    width: 80px;
+    height: auto;
+    margin: 10px 0;
+}
+
+/* Responsif untuk Tablet */
+@media (max-width: 768px) {
+    .packages, .payment-methods {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+    }
+
+    .package-card, .payment-method {
+        padding: 10px;
+    }
+
+    .package-card h4, .payment-method h4 {
+        font-size: 16px;
+    }
+
+    .package-card p, .payment-method p {
+        font-size: 13px;
+    }
+}
+
+/* Responsif untuk Perangkat Kecil */
+@media (max-width: 480px) {
+    .packages, .payment-methods {
+        grid-template-columns: 1fr; /* 1 kolom */
+    }
+
+    .package-card, .payment-method {
+        padding: 8px;
+    }
+
+    .package-card h4, .payment-method h4 {
+        font-size: 14px;
+    }
+
+    .package-card p, .payment-method p {
+        font-size: 12px;
+    }
+}
+
+
+/* Detail Pembayaran */
+.step.payment-details {
+    margin-top: 20px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.step.payment-details p {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #555;
+}
+
+.step.payment-details p strong {
+    color: #333;
+}
+
+/* Submit Button */
+.confirm-btn {
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.confirm-btn:hover {
+    background: #0056b3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .step {
+        flex-direction: column;
+    }
+
+    .packages,
+    .payment-methods {
+        gap: 10px;
+    }
+
+    .package-card,
+    .payment-method {
+        width: 100%;
+    }
+
+    .step-content input[type="text"],
+    .step-content input[type="file"] {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .step-content label {
+        font-size: 14px;
+    }
+
+    .confirm-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+/* Tambahkan efek visual pada tombol */
+.home-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;
+    background: linear-gradient(135deg, #34ace0, #33d9b2); /* Warna gradien */
+    border-radius: 30px; /* Membuat tombol berbentuk oval */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+    transition: all 0.3s ease; /* Animasi hover */
+    text-align: center;
+    white-space: nowrap; /* Hindari teks memanjang ke bawah */
+    overflow: hidden; /* Hindari teks keluar dari tombol */
+    text-overflow: ellipsis; /* Tampilkan '...' jika teks terlalu panjang */
+}
+
+.home-button:hover {
+    background: linear-gradient(135deg, #33d9b2, #34ace0); /* Warna gradien terbalik */
+    transform: translateY(-2px); /* Efek tombol terangkat saat hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Bayangan lebih besar */
+}
+
+.home-button:active {
+    transform: translateY(2px); /* Efek tombol ditekan */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Bayangan lebih kecil */
+}
+
+
+/* Responsif */
+@media (max-width: 768px) {
+    .home-button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-button {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+
+.success-message {
+    background: linear-gradient(135deg, #DFFFE2, #A8E6CF); /* Hijau lembut ke mint */
+    color: #6BCB77;
+    border: 1px solid #6BCB77;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.error-message {
+    background: linear-gradient(135deg, #FF9F9F, #FFC3A0); /* Merah muda ke peach */
+    color: #FF6B6B;
+    border: 1px solid #FF6B6B;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}

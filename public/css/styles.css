@@ -1,0 +1,627 @@
+* 
+{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #6e7dff, #4550a2);
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  
+  main {        /*11111111111111111111111111111111111111111111111*/
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .section {
+    margin-bottom: 40px;
+  }
+  
+  .section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    color: #1e1616;
+  }
+  
+  .section .card-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  
+  .card {
+    width: 107px; /* Ukuran kartu */
+    height: 85px; /* Tinggi kartu sesuai dengan gambar */
+    border-radius: 12px;
+    overflow: hidden; /* Agar gambar tidak keluar dari batas kartu */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    position: relative; /* Membatasi posisi tombol delete */
+  }
+  
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Agar gambar menutupi seluruh area kartu tanpa merusak proporsi */
+  }
+  
+  /* Efek hover pada gambar */
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+  .card span {
+    font-size: 24px;
+    color: #ff9f00;
+  }
+  
+  @media (max-width: 768px) {
+    body {
+      padding: 15px;
+    }
+  
+    header {
+      padding: 20px 5%;
+    }
+  
+    .search-bar {
+      width: 80%;
+    }
+  
+    .section h2 {
+      font-size: 24px;
+    }
+  
+    .card {
+      width: 150px;
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .search-bar {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .search-bar input {
+      margin-bottom: 10px;
+    }
+  
+    .card-container {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .card {
+      width: 100%;
+      font-size: 16px;
+    }
+  
+    .section h2 {
+      font-size: 20px;
+    }
+  }
+
+/* Styling untuk Header searchh !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1*/
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #34495e;
+    width: 100%;
+    position: relative;
+  }
+  
+  /* Styling untuk Search Bar */
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    margin-bottom: 30px;
+  }
+
+
+/* Pastikan parent div mendukung klik */
+.inbox-icon {
+  display: inline-block; /* Agar elemen sesuai dengan gambar */
+  position: relative; /* Untuk memastikan tidak ada elemen yang menutupinya */
+}
+
+/* Gambar */
+.inbox-icon img {
+  height: 40px; /* Sesuaikan dengan tinggi header */
+  max-height: 100%; /* Membatasi gambar sesuai tinggi header */
+  width: auto; /* Mempertahankan rasio gambar */
+  cursor: pointer; /* Menunjukkan bahwa elemen dapat diklik */
+  transition: transform 0.3s ease;
+}
+
+/* Efek hover */
+.inbox-icon img:hover {
+  transform: scale(1.1); /* Zoom-in kecil saat hover */
+}
+
+/* Link */
+.inbox-icon a {
+  text-decoration: none; /* Hilangkan garis bawah pada link */
+  display: inline-block; /* Membuat link mengikuti ukuran gambar */
+}
+
+/* Pastikan pointer-events diaktifkan */
+.inbox-icon,
+.inbox-icon a,
+.inbox-icon img {
+  pointer-events: auto; /* Pastikan elemen dapat menerima klik */
+}
+
+
+  
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Menempatkan search bar di tengah */
+    padding: 10px;
+  }
+  
+  .search-bar input {
+    padding: 15px;
+    font-size: 18px;
+    width: 60%; /* Lebar search bar lebih besar */
+    max-width: 600px; /* Batas maksimum lebar search bar */
+    border-radius: 5px;
+    border: 1px solid #000000;
+  }
+  
+  .search-bar svg {
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+/* Styling untuk Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #34495e;
+  position: relative;
+}
+
+.navbar-links {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+/* Styling untuk Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #34495e;
+  min-width: 160px;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content li {
+  padding: 10px;
+  text-align: center;
+}
+
+.dropdown-content a {
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  color: #3498db;
+}
+
+/* Menampilkan Dropdown Menu saat Hover pada Desktop */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hamburger Menu untuk perangkat kecil */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+/* Media Queries untuk Responsif */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none; /* Menyembunyikan navbar links pada layar kecil */
+    flex-direction: column;
+    gap: 10px;
+    background-color: #34495e;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px;
+    z-index: 1000; /* Pastikan navbar berada di atas konten lainnya */
+  }
+
+  .navbar-links a {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  /* Menampilkan menu dropdown pada perangkat kecil ketika navbar aktif */
+  .menu-toggle:checked + .hamburger + .navbar-links {
+    display: flex; /* Menampilkan menu ketika checkbox dicentang */
+  }
+
+  .navbar .hamburger {
+    display: block; /* Menampilkan hamburger icon */
+  }
+
+  /* Tampilkan dropdown di dalam navbar ketika menu toggle diaktifkan */
+  .menu-toggle:checked + .hamburger + .navbar-links .dropdown-content {
+    display: block; /* Dropdown muncul ketika menu toggle aktif */
+  }
+
+  /* Dropdown Menu tetap tersembunyi tanpa hover di perangkat kecil */
+  .dropdown-content {
+    display: none;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none; /* Dropdown tidak muncul dengan hover pada perangkat kecil */
+  }
+}
+
+
+
+
+
+
+
+  
+  /* Styling untuk Header !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1*/
+/* Styling untuk Header */
+.news-header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #2c3e50;
+    color: white;
+  }
+  
+  .news-header h2 {
+    font-size: 24px;  /* Menurunkan ukuran judul untuk lebih proporsional */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  /* Styling untuk Carousel */
+  .news-carousel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-item {
+    min-width: 100%;
+    max-width: 100%;
+    position: relative;
+  }
+  
+  /* Mengatur ukuran gambar agar lebih proporsional */
+  .carousel-item img {
+    width: 90%;  /* Gambar akan mengikuti lebar kontainer */
+    height: 420px; /* Ukuran tinggi gambar agar tidak terlalu besar */
+    object-fit: cover; /* Memastikan gambar tetap terpotong secara proporsional */
+    border-radius: 8px;
+  }
+  
+  /* Styling untuk caption (teks di atas gambar) */
+  .carousel-caption {
+    position: absolute;
+    bottom: 5px;  /* Menurunkan posisi caption sedikit */
+    left: 100px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    font-size: 14px; /* Mengurangi ukuran font caption */
+    font-weight: bold;
+    border-radius: 20px;
+  }
+  
+  /* Media Queries untuk Responsif pada Layar Kecil */
+  @media (max-width: 768px) {
+    .news-header h2 {
+      font-size: 20px;  /* Ukuran judul lebih kecil pada perangkat kecil */
+    }
+  
+    .carousel-item img {
+      height: 200px;  /* Menurunkan tinggi gambar pada layar kecil */
+    }
+  
+    .carousel-caption {
+      font-size: 12px; /* Mengurangi ukuran font caption pada perangkat kecil */
+      bottom: 10px;
+      left: 10px;
+    }
+    
+  @media (max-width: 480px) {
+    .news-header h2 {
+      font-size: 18px;  /* Judul lebih kecil pada perangkat dengan layar lebih kecil */
+    }
+  
+    .carousel-item img {
+      height: 180px;  /* Ukuran gambar lebih kecil pada layar smartphone */
+    }
+  
+    .carousel-caption {
+      font-size: 12px; /* Ukuran teks lebih kecil */
+      bottom: 5px;
+      left: 5px;
+    }
+  }
+}
+
+/* Footer Styles */
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Default for small screens */
+  gap: 20px;
+  padding: 40px;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb); /* Soft gradient */
+  color: white;
+  text-align: center;
+  border-top: 3px solid #fff;
+  width: 100%; /* Ensure it takes full width */
+  max-width: 1200px; /* Maximum width on larger screens */
+  margin: 0 auto; /* Centering the footer container */
+}
+
+/* Styling for each footer section */
+.footer-section {
+  padding: 10px;
+}
+
+.footer-section h4 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-section p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #dcdcdc; /* Soft text color */
+}
+
+/* Styling for social media icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icon img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover img {
+  transform: scale(1.2);
+}
+
+/* Desktop view - 3 columns */
+@media (min-width: 768px) {
+  .footer-container {
+      grid-template-columns: 1fr 1fr 1fr; /* 3 equal columns for larger screens */
+  }
+}
+
+/* Larger Desktop view (if needed) */
+@media (min-width: 1200px) {
+}
+
+  
+/* Bagian Popular */
+.popular-section {
+  text-align: center;
+  background-color: hidden;
+  padding: 20px 20px;
+}
+
+.popular-section h2 {
+  font-size: 2.5em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.popular-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.popular-item {
+  background-color: black;
+  border-radius: 60px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.popular-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.popular-item h3 {
+  font-size: 1.6em;
+  color: #333;
+  margin: 15px 0;
+}
+
+.popular-item p {
+  font-size: 1em;
+  color: #777;
+  margin-bottom: 15px;
+  padding: 0 20px;
+}
+
+.popular-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+}
+
+.popular-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .popular-grid {
+      grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .popular-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Adminnnnn!!!!!!!!!!!!!!!1 */
+
+.btn-add {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-add:hover {
+  background-color: #218838;
+}
+
+.btn-delete {
+  position: absolute; /* Posisi relatif terhadap elemen parent (card) */
+  bottom: 10px; /* Jarak dari bawah card */
+  left: 50%; /* Posisi horizontal di tengah */
+  transform: translateX(20%); /* Menyesuaikan agar tepat di tengah */
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10; /* Pastikan tombol berada di atas elemen lain */
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+.btn-edit {
+  position: absolute; /* Posisi relatif terhadap elemen parent (card) */
+  bottom: 10px; /* Jarak dari bawah card */
+  left: 50%; /* Posisi horizontal di tengah */
+  transform: translateX(-150%); /* Menyesuaikan agar tepat di tengah */
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10; /* Pastikan tombol berada di atas elemen lain */
+}
+
+.btn-edit:hover {
+  background-color: #45a049;
+}
+
+
+

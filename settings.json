@@ -1,0 +1,4 @@
+{
+    "intelephense.environment.documentRoot": "/path/to/your/laravel/project",
+    "intelephense.files.associations": ["*.php"]
+  }

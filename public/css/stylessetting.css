@@ -1,0 +1,232 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Mencegah scroll horizontal jika ada elemen yang terlalu lebar */
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%; /* Pastikan body memenuhi layar */
+}
+
+
+/* Wrapper */
+.account-settings-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Tinggi minimal sesuai dengan tinggi layar */
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    font-family: 'Arial', sans-serif;
+    padding: 0 20px; /* Tambahkan padding agar konten tidak terlalu dekat tepi layar */
+    box-sizing: border-box; /* Pastikan padding dihitung dalam lebar elemen */
+}
+
+/* Container */
+.account-settings-container {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Heading */
+.account-settings-container h1 {
+    font-size: 28px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.account-settings-container p {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+/* Form Box */
+.form-box {
+    margin-bottom: 20px;
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 8px rgba(37, 117, 252, 0.5);
+    outline: none;
+}
+
+/* Buttons */
+.primary-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    background-color: #2575fc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.primary-btn:hover {
+    background-color: #1f65c1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Success Message */
+.success-message {
+    background-color: #e6f7e9;
+    color: #28a745;
+    border: 1px solid #28a745;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* Error Message */
+.error-message {
+    background-color: #ffe6e6;
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.error-message ul {
+    padding-left: 20px;
+    margin: 0;
+    text-align: left;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .account-settings-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .primary-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .input-group input {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .account-settings-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .primary-btn {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .input-group input {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
+
+/* Back Button Style */
+.back-button {
+    display: inline-block;
+    text-align: center;
+    margin: 20px auto 0;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Warna gradien */
+    border: none;
+    border-radius: 30px; /* Tombol berbentuk oval */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan tombol */
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f); /* Warna gradien terbalik */
+    transform: translateY(-2px); /* Efek tombol terangkat */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Bayangan lebih besar saat hover */
+}
+
+.back-button:active {
+    transform: translateY(2px); /* Efek tombol ditekan */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Bayangan lebih kecil saat ditekan */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .back-button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
+
+.account-settings-wrapper {
+    background: linear-gradient(135deg, rgba(106, 17, 203, 0.8), rgba(37, 117, 252, 0.8)), 
+                url('path/to/your/image.jpg');
+    background-size: cover; /* Pastikan gambar menutupi layar */
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
